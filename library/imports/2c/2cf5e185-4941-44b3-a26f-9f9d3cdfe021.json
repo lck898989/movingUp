@@ -1,0 +1,24 @@
+{
+  "__type__": "cc.JsonAsset",
+  "_name": "level1",
+  "_objFlags": 0,
+  "_native": "",
+  "json": {
+    "col": 10,
+    "row": 10,
+    "objects": [
+      {
+        "pos": {
+          "row": 8,
+          "col": 5
+        },
+        "offsetMultiplier": {
+          "x": 0.01,
+          "y": 0.01
+        },
+        "scaleMultiplier": 1,
+        "type": "finish"
+      }
+    ]
+  }
+}

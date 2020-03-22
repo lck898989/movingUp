@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "boostAnimation",
+    "texture": "5c845006-bcde-4147-bf8b-cf84f4f67164",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      121,
+      249
+    ],
+    "offset": [
+      -2,
+      3
+    ],
+    "originalSize": [
+      125,
+      255
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
