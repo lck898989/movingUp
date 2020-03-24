@@ -19,6 +19,7 @@ export default class Ball extends cc.Component {
         if(other.name.indexOf("board") >= 0) {
             cc.director.emit("ballToBoard",{other,self});
         }
+        console.log("other.name is ",other.name);
         if(other.name.indexOf("hole") >= 0) {
             console.log("碰到黑洞了");
             cc.director.emit("ballToHole",{other,self});

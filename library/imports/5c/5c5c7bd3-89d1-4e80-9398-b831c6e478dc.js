@@ -42,6 +42,7 @@ var Ball = /** @class */ (function (_super) {
         if (other.name.indexOf("board") >= 0) {
             cc.director.emit("ballToBoard", { other: other, self: self });
         }
+        console.log("other.name is ", other.name);
         if (other.name.indexOf("hole") >= 0) {
             console.log("碰到黑洞了");
             cc.director.emit("ballToHole", { other: other, self: self });

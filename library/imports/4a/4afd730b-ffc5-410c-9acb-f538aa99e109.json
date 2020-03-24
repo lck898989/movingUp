@@ -75,8 +75,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 3,
+    "groupIndex": 3,
     "_id": ""
   },
   {
@@ -122,13 +122,13 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 1,
-      "y": -2.8
+      "x": 0.1,
+      "y": -2.1
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 33.4,
-      "height": 43.1
+      "width": 43.8,
+      "height": 53.2
     },
     "_id": ""
   },
