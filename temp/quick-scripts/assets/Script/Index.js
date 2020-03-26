@@ -33,19 +33,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
+var Index = /** @class */ (function (_super) {
+    __extends(Index, _super);
+    function Index() {
         // LIFE-CYCLE CALLBACKS:
         var _this = _super !== null && _super.apply(this, arguments) || this;
         // onLoad () {}
         _this.bgm = null;
+        // 常驻节点
+        _this.rootNode = null;
         return _this;
         // update (dt) {}
     }
-    NewClass.prototype.start = function () {
+    Index.prototype.start = function () {
+        cc.game.addPersistRootNode(this.rootNode);
     };
-    NewClass.prototype.btnEvent = function (e, data) {
+    Index.prototype.btnEvent = function (e, data) {
         if (data === "game") {
             cc.director.loadScene("Game");
             cc.audioEngine.playMusic(this.bgm, true);
@@ -53,16 +56,22 @@ var NewClass = /** @class */ (function (_super) {
         else if (data === "setting") {
             // cc.director.loadScene("");
         }
+        else if (data === "level") {
+            cc.director.loadScene("level");
+        }
     };
     __decorate([
         property({ type: cc.AudioClip })
-    ], NewClass.prototype, "bgm", void 0);
-    NewClass = __decorate([
+    ], Index.prototype, "bgm", void 0);
+    __decorate([
+        property(cc.Node)
+    ], Index.prototype, "rootNode", void 0);
+    Index = __decorate([
         ccclass
-    ], NewClass);
-    return NewClass;
+    ], Index);
+    return Index;
 }(cc.Component));
-exports.default = NewClass;
+exports.default = Index;
 
 cc._RF.pop();
         }

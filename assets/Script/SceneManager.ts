@@ -1,12 +1,12 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class SceneManager {
+export default class SceneManager extends cc.Component{
     // static getInstance() {
     //     throw new Error("Method not implemented.");
     // }
 
-
+    
     // LIFE-CYCLE CALLBACKS:
     private static _instance: SceneManager = null;
     private level: number = 2;
@@ -16,6 +16,13 @@ export default class SceneManager {
             this._instance = new SceneManager();
         }
         return this._instance;
+    }
+    start(): void {
+        cc.director.on("levelChoose",this.chooseLevel,this);
+    }
+    private chooseLevel(data: any): void {
+        console.log("选择关卡传递过来的数据data is ",data);
+        this.level = data.level;
     }
     public setRoot(rootNode: cc.Node) {
         this._root = rootNode;

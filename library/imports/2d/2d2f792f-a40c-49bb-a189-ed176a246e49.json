@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "helloworld",
+    "_name": "index",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -16,6 +16,9 @@
     "_children": [
       {
         "__id__": 2
+      },
+      {
+        "__id__": 32
       }
     ],
     "_active": true,
@@ -82,10 +85,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 32
+        "__id__": 34
       },
       {
-        "__id__": 33
+        "__id__": 35
       }
     ],
     "_prefab": null,
@@ -175,7 +178,7 @@
       "array": [
         0,
         0,
-        427.8165494695127,
+        589.7632999772028,
         0,
         0,
         0,
@@ -912,7 +915,7 @@
     "component": "",
     "_componentId": "a1e7dPI1dhB8q/1KSTS6Emr",
     "handler": "btnEvent",
-    "customEventData": "game"
+    "customEventData": "level"
   },
   {
     "__type__": "cc.Widget",
@@ -1474,7 +1477,82 @@
     "bgm": {
       "__uuid__": "5336d7ff-8db9-457e-9569-257a90e9ccd7"
     },
+    "rootNode": {
+      "__id__": 32
+    },
     "_id": "a2OSBRlkxPFa6nd7+Ht4sc"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Controller",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 33
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "e9ORWuY3JGY5WrJuXYc4vB"
+  },
+  {
+    "__type__": "6d64aAOOChMAa3V1hSCrm1W",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 32
+    },
+    "_enabled": true,
+    "_id": "c4q8nFEQhJq7cZ7bHUWT1A"
   },
   {
     "__type__": "cc.Canvas",
