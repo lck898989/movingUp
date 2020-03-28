@@ -53,6 +53,7 @@ var Index = /** @class */ (function (_super) {
                 cc.audioEngine.playMusic(this.bgm, true);
             }
         }
+        // cc.sys.localStorage.setItem("my",undefined);
     };
     Index.prototype.btnEvent = function (e, data) {
         if (data === "game") {

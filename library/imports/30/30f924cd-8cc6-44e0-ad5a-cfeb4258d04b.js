@@ -48,33 +48,42 @@ var User = /** @class */ (function (_super) {
     User.prototype.onLoad = function () {
     };
     User.prototype.setBestRecord = function (level, time) {
-        // this.bestRecord.level = level;
-        // this.level = level;
-        // this.bestRecord.time = time;
-        if (level >= 1 && !this.bestRecord[level - 1]) {
-            // 新加记录
-            this.bestRecord.push({ level: level, time: time });
+        var localDataString = cc.sys.localStorage.getItem("my");
+        var localData;
+        // 取出游戏记录
+        if (localDataString && localDataString !== "" && localDataString !== "undefined") {
+            localData = JSON.parse(localDataString);
         }
         else {
-            if (this.bestRecord[level - 1].level === level) {
+            var firstData = [];
+            firstData.push({ level: level, time: time });
+            // 创建一个记录
+            cc.sys.localStorage.setItem("my", JSON.stringify(firstData));
+        }
+        if (level > 1 && localData && localData.length > 0 && !localData[level - 1]) {
+            // 新加记录
+            // this.bestRecord.push({level: level,time: time});
+            localData.push({ level: level, time: time });
+            cc.sys.localStorage.setItem("my", JSON.stringify(localData));
+        }
+        else {
+            if (level >= 1 && localData.length > 0 && localData[level - 1].level === level) {
                 // 更新记录（如果新传递进来的时间大于记录的时间不用更新否则更新）
-                var curTimeString = this.bestRecord[level - 1].time;
+                var curTimeString = localData[level - 1].time;
                 if (curTimeString === "00:00") {
                     // 还没有最好成绩直接存储最后成绩
-                    this.bestRecord[level - 1].time = time;
-                    // 存储到计算机中去
-                    // cc.sys.localStorage.setItem();
+                    localData[level - 1].time = time;
                 }
                 else {
                     // 有最好成绩检查是否替换最好成绩
                     if (this.convertTimeStringToNumber(curTimeString) > this.convertTimeStringToNumber(time)) {
                         // 更新
-                        this.bestRecord[level - 1].time = time;
+                        localData[level - 1].time = time;
                     }
                 }
             }
+            cc.sys.localStorage.setItem("my", JSON.stringify(localData));
         }
-        cc.sys.localStorage.setItem("my", JSON.stringify(this.bestRecord));
     };
     // 将字符串类型的时间转换为数字以便进行比较
     User.prototype.convertTimeStringToNumber = function (timestring) {
@@ -87,15 +96,16 @@ var User = /** @class */ (function (_super) {
     };
     User.prototype.getBestRecord = function (level) {
         var res;
-        if (!cc.sys.localStorage.getItem("my")) {
+        if (cc.sys.localStorage.getItem("my") === "undefined" || !cc.sys.localStorage.getItem("my")) {
             res = null;
+            return null;
         }
         else {
             res = JSON.parse(cc.sys.localStorage.getItem("my"));
-        }
-        for (var i = 0; i < res.length; i++) {
-            if (this.bestRecord[i].level === level) {
-                return this.bestRecord[i];
+            for (var i = 0; i < res.length; i++) {
+                if (res[i].level === level) {
+                    return res[i];
+                }
             }
         }
     };

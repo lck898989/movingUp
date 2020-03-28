@@ -259,3 +259,268 @@ If you use TS, it should be changed to:
     }
     %s: cc.Texture2D = null;
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T13:51:36.311Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T13:55:50.460Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:01:54.339Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:19:45.961Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:23:16.622Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:24:15.508Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:28:20.810Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:31:16.710Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:32:31.620Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:35:56.243Z - failed: Failed to import script db://assets/Script/users/User.ts: Compile error: SyntaxError: Unexpected token (100:103) while parsing /Users/lck/ccc_project/movingupGame/movingUp/temp/quick-scripts/assets/Script/users/User.js while parsing file: /Users/lck/ccc_project/movingupGame/movingUp/temp/quick-scripts/assets/Script/users/User.js
+    at DestroyableTransform.end [as _flush] (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/insert-module-globals/index.js:96:21)
+    at DestroyableTransform.prefinish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_transform.js:138:10)
+    at DestroyableTransform.emit (events.js:194:13)
+    at DestroyableTransform.EventEmitter.emit (domain.js:469:20)
+    at prefinish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:619:14)
+    at finishMaybe (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:627:5)
+    at endWritable (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:638:3)
+    at DestroyableTransform.Writable.end (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:594:41)
+    at DestroyableTransform.onend (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_readable.js:577:10)
+    at Object.onceWrapper (events.js:282:20)
+2020-03-28T14:35:56.590Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:35:56.594Z - failed: load script [/Users/lck/ccc_project/movingupGame/movingUp/temp/quick-scripts/assets/Script/users/User.js] failed : /Users/lck/ccc_project/movingupGame/movingUp/temp/quick-scripts/assets/Script/users/User.js:99
+        if (cc.sys.localStorage.getItem("my") === "undefined" && !cc.sys.localStorage.getItem("my") && ) {
+                                                                                                       ^
+
+SyntaxError: Unexpected token )
+    at new Script (vm.js:85:7)
+    at createScript (vm.js:266:10)
+    at Object.runInThisContext (vm.js:314:10)
+    at Module._compile (internal/modules/cjs/loader.js:766:26)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:851:10)
+    at Module.load (internal/modules/cjs/loader.js:701:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:633:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:625:3)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+2020-03-28T14:36:50.300Z - warn: Script attached to "Controller" is missing or invalid. Detailed information:
+Node path: "Controller"
+Script UUID: "30f924cd-8cc6-44e0-ad5a-cfeb4258d04b"
+Class ID: "30f92TNjMZE4K1az+tCWNBL"
+
+2020-03-28T14:36:50.352Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:36:50.356Z - failed: load script [/Users/lck/ccc_project/movingupGame/movingUp/temp/quick-scripts/assets/Script/users/User.js] failed : /Users/lck/ccc_project/movingupGame/movingUp/temp/quick-scripts/assets/Script/users/User.js:99
+        if (cc.sys.localStorage.getItem("my") === "undefined" && !cc.sys.localStorage.getItem("my") && ) {
+                                                                                                       ^
+
+SyntaxError: Unexpected token )
+    at new Script (vm.js:85:7)
+    at createScript (vm.js:266:10)
+    at Object.runInThisContext (vm.js:314:10)
+    at Module._compile (internal/modules/cjs/loader.js:766:26)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:851:10)
+    at Module.load (internal/modules/cjs/loader.js:701:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:633:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:625:3)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+2020-03-28T14:37:18.891Z - warn: Script attached to "Controller" in scene "index.fire" is missing or invalid. Detailed information:
+Node path: "Controller"
+Asset url: "db://assets/Scene/index.fire"
+Script UUID: "30f924cd-8cc6-44e0-ad5a-cfeb4258d04b"
+Class ID: "30f92TNjMZE4K1az+tCWNBL"
+
+2020-03-28T14:38:21.881Z - warn: Script attached to "Controller" is missing or invalid. Detailed information:
+Node path: "Controller"
+Script UUID: "30f924cd-8cc6-44e0-ad5a-cfeb4258d04b"
+Class ID: "30f92TNjMZE4K1az+tCWNBL"
+
+2020-03-28T14:38:22.299Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-28T14:41:11.715Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )

@@ -33,6 +33,7 @@ export default class Index extends cc.Component {
                 cc.audioEngine.playMusic(this.bgm,true);
             } 
         }
+        // cc.sys.localStorage.setItem("my",undefined);
     }
     btnEvent(e: cc.Event,data: any): void {
         if(data === "game") {

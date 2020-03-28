@@ -220,8 +220,8 @@
     "relativePath": "Scene"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1585403122153,
-    "meta": 1585403122166,
+    "asset": 1585406479518,
+    "meta": 1585406479524,
     "relativePath": "Scene/index.fire"
   },
   "4734c20c-0db8-4eb2-92ea-e692f4d70934": {
@@ -478,11 +478,6 @@
     "asset": 1585200965015,
     "meta": 1585200966298,
     "relativePath": "Script/GameController.ts"
-  },
-  "a1e7d3c8-d5d8-41f2-aff5-2924d2e849ab": {
-    "asset": 1585203217915,
-    "meta": 1585204239907,
-    "relativePath": "Script/Index.ts"
   },
   "8d86ae02-cb51-4687-82c3-8a5b6bdd8daf": {
     "asset": 1585204654457,
@@ -959,19 +954,24 @@
     "meta": 1585399902616,
     "relativePath": "Script/OverController.ts"
   },
-  "6fcadbfb-e64d-4d38-b0b4-6b562a366770": {
-    "asset": 1585401212226,
-    "meta": 1585401216808,
-    "relativePath": "Script/level/LevelItem.ts"
-  },
   "2ab68dba-d93d-479c-82e7-52587f7e8ee0": {
     "asset": 1585401868291,
     "meta": 1585401878985,
     "relativePath": "Script/Game.ts"
   },
+  "6fcadbfb-e64d-4d38-b0b4-6b562a366770": {
+    "asset": 1585403745274,
+    "meta": 1585403749976,
+    "relativePath": "Script/level/LevelItem.ts"
+  },
+  "a1e7d3c8-d5d8-41f2-aff5-2924d2e849ab": {
+    "asset": 1585406205751,
+    "meta": 1585406209868,
+    "relativePath": "Script/Index.ts"
+  },
   "30f924cd-8cc6-44e0-ad5a-cfeb4258d04b": {
-    "asset": 1585403064362,
-    "meta": 1585403119038,
+    "asset": 1585406447141,
+    "meta": 1585406471230,
     "relativePath": "Script/users/User.ts"
   }
 }
