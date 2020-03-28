@@ -23,6 +23,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var Consts_1 = require("./consts/Consts");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Level = /** @class */ (function (_super) {
     __extends(Level, _super);
@@ -53,6 +54,9 @@ var Level = /** @class */ (function (_super) {
             for (var j = 0; j < this.col; j++) {
                 levelNum++;
                 var levelItemNode = cc.instantiate(this.levetBtn);
+                if (i >= 1) {
+                    levelItemNode.getComponent(cc.Button).interactable = false;
+                }
                 levelItemNode.setPosition(cc.v2(this.startX + j * (this.btnWidth + this.spaceX), this.startY - i * (this.btnHeight + this.spaceY)));
                 this.levelBtnsCon.addChild(levelItemNode);
                 levelItemNode.name = i.toString();
@@ -74,6 +78,10 @@ var Level = /** @class */ (function (_super) {
             cc.director.loadScene("index");
         }
         else if (data === "setting") {
+            // SceneManager
+            // LayerState
+            var sceneManager = cc.find("Controller").getComponent("SceneManager");
+            sceneManager.LS = Consts_1.LayerState.SETTING;
             // cc.director.loadScene();
         }
     };

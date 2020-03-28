@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_next_arrow",
+    "texture": "d6267a7e-b414-45ad-804a-0146aab3e258",
+    "atlas": "",
+    "rect": [
+      16,
+      6,
+      32,
+      52
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      64,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -21,7 +21,7 @@ export default class Hole extends cc.Component {
         let self = this;
         this.node.active = false;
         cc.director.on("ballToBoard",() => {
-            console.log("球碰到了板子");
+            // console.log("球碰到了板子");
             if(!self.isDown) {
                 self.node.active = true;
                 self.node.getComponent(cc.Animation).play("down");

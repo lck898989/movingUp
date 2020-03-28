@@ -32,6 +32,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var Consts_1 = require("./consts/Consts");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Index = /** @class */ (function (_super) {
     __extends(Index, _super);
@@ -47,14 +48,21 @@ var Index = /** @class */ (function (_super) {
     }
     Index.prototype.start = function () {
         cc.game.addPersistRootNode(this.rootNode);
+        if (Consts_1.MusicState.musicState === Consts_1.eType.ON) {
+            if (!cc.audioEngine.isMusicPlaying()) {
+                cc.audioEngine.playMusic(this.bgm, true);
+            }
+        }
     };
     Index.prototype.btnEvent = function (e, data) {
         if (data === "game") {
             cc.director.loadScene("Game");
-            cc.audioEngine.playMusic(this.bgm, true);
         }
         else if (data === "setting") {
             // cc.director.loadScene("");
+            var sceneManager = cc.find("Controller").getComponent("SceneManager");
+            sceneManager.LS = Consts_1.LayerState.SETTING;
+            // cc.find("Controller")
         }
         else if (data === "level") {
             cc.director.loadScene("level");

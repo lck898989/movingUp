@@ -8,6 +8,9 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import SceneManager from "./SceneManager";
+import { LayerState, MusicState, eType } from "./consts/Consts";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -25,13 +28,21 @@ export default class Index extends cc.Component {
     rootNode: cc.Node = null;
     start () {
         cc.game.addPersistRootNode(this.rootNode);
+        if(MusicState.musicState === eType.ON) {
+            if(!cc.audioEngine.isMusicPlaying()) {
+                cc.audioEngine.playMusic(this.bgm,true);
+            } 
+        }
     }
     btnEvent(e: cc.Event,data: any): void {
         if(data === "game") {
             cc.director.loadScene("Game");
-            cc.audioEngine.playMusic(this.bgm,true);
-        } else if(data === "setting"){
+            
+        } else if(data === "setting") {
             // cc.director.loadScene("");
+            let sceneManager: SceneManager = <SceneManager>cc.find("Controller").getComponent("SceneManager");
+            sceneManager.LS = LayerState.SETTING;
+            // cc.find("Controller")
             
         } else if(data === "level") {
             cc.director.loadScene("level");

@@ -47,7 +47,7 @@ var Hole = /** @class */ (function (_super) {
         var self = this;
         this.node.active = false;
         cc.director.on("ballToBoard", function () {
-            console.log("球碰到了板子");
+            // console.log("球碰到了板子");
             if (!self.isDown) {
                 self.node.active = true;
                 self.node.getComponent(cc.Animation).play("down");

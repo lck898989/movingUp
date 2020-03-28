@@ -4,197 +4,137 @@
   "_objFlags": 0,
   "_native": "",
   "json": {
-    "width": 10,
-    "height": 12,
+    "col": 10,
+    "row": 10,
     "objects": [
       {
         "pos": {
-          "x": 5,
-          "y": 8
+          "row": 5,
+          "col": 5
         },
         "offsetMultiplier": {
-          "x": -0.889,
-          "y": -0.181
+          "row": -0.889,
+          "col": -0.181
         },
-        "scaleMultiplier": "3",
+        "scaleMultiplier": 0.7,
         "type": "finish"
       },
       {
         "pos": {
-          "x": 5,
-          "y": 11
+          "row": 4,
+          "col": 3
         },
         "offsetMultiplier": {
-          "x": -0.917,
-          "y": -0.431
+          "row": -0.917,
+          "col": -0.431
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 4,
-          "y": 10
+          "row": 5,
+          "col": 2
         },
         "offsetMultiplier": {
-          "x": -0.958,
-          "y": 0.361
+          "row": -0.958,
+          "col": 0.361
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 6,
-          "y": 10
+          "row": 3,
+          "col": 4
         },
         "offsetMultiplier": {
-          "x": -0.903,
-          "y": 0.389
+          "row": -0.903,
+          "col": 0.389
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 7,
-          "y": 10
+          "row": 7,
+          "col": 6
         },
         "offsetMultiplier": {
-          "x": -1.042,
-          "y": -0.139
+          "row": -1.042,
+          "col": -0.139
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 3,
-          "y": 10
+          "row": 6,
+          "col": 7
         },
         "offsetMultiplier": {
-          "x": -0.736,
-          "y": -0.194
+          "row": -0.736,
+          "col": -0.194
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 8,
-          "y": 9
+          "row": 5,
+          "col": 8
         },
         "offsetMultiplier": {
-          "x": -1.458,
-          "y": 0.083
+          "row": -1.458,
+          "col": 0.083
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 8,
-          "y": 8
+          "row": 4,
+          "col": 7
         },
         "offsetMultiplier": {
-          "x": -1.181,
-          "y": 0.208
+          "row": -1.181,
+          "col": 0.208
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 8,
-          "y": 7
+          "row": 3,
+          "col": 6
         },
         "offsetMultiplier": {
-          "x": -1.222,
-          "y": 0.264
+          "row": -1.222,
+          "col": 0.264
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 7,
-          "y": 6
+          "row": 6,
+          "col": 3
         },
         "offsetMultiplier": {
-          "x": -0.611,
-          "y": 0.375
+          "row": -1.222,
+          "col": 0.264
         },
         "scaleMultiplier": "1",
         "type": "hole"
       },
       {
         "pos": {
-          "x": 3,
-          "y": 9
+          "row": 2,
+          "col": 5
         },
         "offsetMultiplier": {
-          "x": -1.306,
-          "y": 0.028
-        },
-        "scaleMultiplier": "1",
-        "type": "hole"
-      },
-      {
-        "pos": {
-          "x": 2,
-          "y": 8
-        },
-        "offsetMultiplier": {
-          "x": -0.639,
-          "y": 0.125
-        },
-        "scaleMultiplier": "1",
-        "type": "hole"
-      },
-      {
-        "pos": {
-          "x": 2,
-          "y": 7
-        },
-        "offsetMultiplier": {
-          "x": -0.556,
-          "y": 0.139
-        },
-        "scaleMultiplier": "1",
-        "type": "hole"
-      },
-      {
-        "pos": {
-          "x": 3,
-          "y": 6
-        },
-        "offsetMultiplier": {
-          "x": -1.139,
-          "y": 0.278
-        },
-        "scaleMultiplier": "1",
-        "type": "hole"
-      },
-      {
-        "pos": {
-          "x": 7,
-          "y": 6
-        },
-        "offsetMultiplier": {
-          "x": -1.292,
-          "y": -0.375
-        },
-        "scaleMultiplier": "1",
-        "type": "hole"
-      },
-      {
-        "pos": {
-          "x": 4,
-          "y": 6
-        },
-        "offsetMultiplier": {
-          "x": -1.417,
-          "y": -0.431
+          "row": -0.611,
+          "col": 0.375
         },
         "scaleMultiplier": "1",
         "type": "hole"

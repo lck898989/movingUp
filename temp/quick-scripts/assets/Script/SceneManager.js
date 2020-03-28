@@ -24,15 +24,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var Consts_1 = require("./consts/Consts");
+// enum LayerState {
+// };
 var SceneManager = /** @class */ (function (_super) {
     __extends(SceneManager, _super);
     function SceneManager() {
-        // static getInstance() {
-        //     throw new Error("Method not implemented.");
-        // }
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.level = 2;
         _this._root = null;
+        // 设置层
+        _this.settingNode = null;
+        // 特效层
+        _this.effecLayer = null;
+        // 数据加载中层
+        _this.loadingLayer = null;
+        // 遮罩层
+        _this.maskLayer = null;
+        _this.layerState = Consts_1.LayerState.NONE;
         return _this;
     }
     SceneManager_1 = SceneManager;
@@ -44,10 +53,54 @@ var SceneManager = /** @class */ (function (_super) {
     };
     SceneManager.prototype.start = function () {
         cc.director.on("levelChoose", this.chooseLevel, this);
+        this.LS = Consts_1.LayerState.NONE;
+    };
+    Object.defineProperty(SceneManager.prototype, "LS", {
+        set: function (state) {
+            this.layerState = state;
+            switch (state) {
+                case Consts_1.LayerState.NONE:
+                    this.node.active = false;
+                    break;
+                case Consts_1.LayerState.EFFECT:
+                    this.setLayerVisible([state]);
+                    break;
+                case Consts_1.LayerState.SETTING:
+                    this.setLayerVisible([state]);
+                    this.settingNode.getComponent(cc.Animation).play("settingIn");
+                    break;
+                case Consts_1.LayerState.MASK:
+                    this.setLayerVisible([state]);
+                    break;
+                case Consts_1.LayerState.LOADING:
+                    this.setLayerVisible([state]);
+                    break;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SceneManager.prototype.setLayerVisible = function (index) {
+        this.node.active = true;
+        var rootNodeLen = this.node.childrenCount;
+        var showNodeArr = [];
+        for (var i = 0; i < rootNodeLen; i++) {
+            for (var j = 0; j < index.length; j++) {
+                if (index[j] - 1 === i) {
+                    showNodeArr.push(this.node.children[i]);
+                }
+                else {
+                    this.node.children[i].active = false;
+                }
+            }
+        }
+        for (var i = 0; i < showNodeArr.length; i++) {
+            showNodeArr[i].active = true;
+        }
     };
     SceneManager.prototype.chooseLevel = function (data) {
         console.log("选择关卡传递过来的数据data is ", data);
-        this.level = data.level;
+        this.setLevel(data.level);
     };
     SceneManager.prototype.setRoot = function (rootNode) {
         this._root = rootNode;
@@ -71,6 +124,18 @@ var SceneManager = /** @class */ (function (_super) {
     var SceneManager_1;
     // LIFE-CYCLE CALLBACKS:
     SceneManager._instance = null;
+    __decorate([
+        property(cc.Node)
+    ], SceneManager.prototype, "settingNode", void 0);
+    __decorate([
+        property(cc.Node)
+    ], SceneManager.prototype, "effecLayer", void 0);
+    __decorate([
+        property(cc.Node)
+    ], SceneManager.prototype, "loadingLayer", void 0);
+    __decorate([
+        property(cc.Node)
+    ], SceneManager.prototype, "maskLayer", void 0);
     SceneManager = SceneManager_1 = __decorate([
         ccclass
     ], SceneManager);

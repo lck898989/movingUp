@@ -59,7 +59,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ResourceManager_1 = require("./managers/ResourceManager");
-var SceneManager_1 = require("./SceneManager");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Direction;
 (function (Direction) {
@@ -91,6 +90,7 @@ var Game = /** @class */ (function (_super) {
         _this.holeWin = null;
         _this.holeLose = null;
         _this.holeCon = null;
+        _this.overMenu = null;
         _this.speed = 1;
         _this.canMove = true;
         _this.dir = Direction.NONE;
@@ -104,23 +104,25 @@ var Game = /** @class */ (function (_super) {
         _this.gridWidth = 70;
         _this.gridHeight = 70;
         _this.loseHolePool = null;
-        _this.poolDeep = 20;
+        _this.poolDeep = 40;
         _this.holeWinNode = null;
         return _this;
     }
     Game.prototype.onLoad = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var self, levelData;
+            var self, sceneManager, levelStr, levelData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        // this.overMenu.active = false;
                         this.gridMap = [];
                         cc.macro.ENABLE_WEBGL_ANTIALIAS = true;
                         cc.director.getPhysicsManager().enabled = true;
                         self = this;
                         console.log("bg is ", this.bg);
-                        cc.director.on("ballToBoard", this.ballToBoardHandle, this);
-                        return [4 /*yield*/, ResourceManager_1.default.getInstance().loadResourceByUrl("level" + SceneManager_1.default.getInstance().getLevel(), cc.JsonAsset)];
+                        sceneManager = cc.find("Controller").getComponent("SceneManager");
+                        levelStr = sceneManager.getLevel().toString();
+                        return [4 /*yield*/, ResourceManager_1.default.getInstance().loadResourceByUrl("level" + levelStr, cc.JsonAsset)];
                     case 1:
                         levelData = _a.sent();
                         this.levelData = levelData.json;
@@ -177,10 +179,12 @@ var Game = /** @class */ (function (_super) {
                     this.holeWinNode = cc.instantiate(this.holeWin);
                     this.holeCon.addChild(this.holeWinNode);
                     this.holeWinNode.setPosition(this.gridMap[posObj.row][posObj.col]);
+                    this.holeWinNode.scale = Number(objects[i].scaleMultiplier);
                 }
                 else {
                     var posObj = objects[i].pos;
                     var loseHoleNode = this.loseHolePool.get();
+                    console.log("从节点池中获取的节点是：", loseHoleNode);
                     if (loseHoleNode) {
                         loseHoleNode.setPosition(this.gridMap[posObj.row][posObj.col]);
                         this.holeCon.addChild(loseHoleNode);
@@ -190,12 +194,52 @@ var Game = /** @class */ (function (_super) {
         }
         // this.ball.zIndex = this.ball.parent
     };
+    // 球碰到地板了说明是掉下去了游戏结束
     Game.prototype.ballToLandHandle = function () {
         this.startTime = false;
+        this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "TRY AGAIN";
+        var inName = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+        this.overMenu.getComponent(cc.Animation).play(inName);
+        this.over = true;
     };
     // 游戏结束
-    Game.prototype.overHandle = function () {
-        this.startTime = false;
+    Game.prototype.overHandle = function (data) {
+        return __awaiter(this, void 0, void 0, function () {
+            var successLabel, bestTimeString, inName, userCom, inName;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.startTime = false;
+                        if (!(data.over === "win")) return [3 /*break*/, 2];
+                        // 胜利
+                        console.log("游戏胜利");
+                        return [4 /*yield*/, this.ballToHoleHandle(this.holeWinNode)];
+                    case 1:
+                        _a.sent();
+                        this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "SUCCESS";
+                        this.overMenu.getChildByName("successCon").active = true;
+                        successLabel = this.overMenu.getChildByName("successCon").getChildByName("time").getComponent(cc.Label);
+                        bestTimeString = this.updateTimeByTotalTime(this.timeUsed, successLabel);
+                        inName = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+                        this.overMenu.getComponent(cc.Animation).play(inName);
+                        userCom = cc.find("Controller").getComponent("User");
+                        userCom.setBestRecord(Number(cc.find("Controller").getComponent("SceneManager").getLevel().toString()), bestTimeString);
+                        return [3 /*break*/, 4];
+                    case 2:
+                        if (!(data.over === "lose")) return [3 /*break*/, 4];
+                        return [4 /*yield*/, this.ballToHoleHandle(data.node)];
+                    case 3:
+                        _a.sent();
+                        console.log("游戏失败");
+                        // this.overMenu.active = true;
+                        this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "TRY AGAIN";
+                        inName = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+                        this.overMenu.getComponent(cc.Animation).play(inName);
+                        _a.label = 4;
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
     };
     Game.prototype.ballToBoardHandle = function () {
         var self = this;
@@ -240,34 +284,44 @@ var Game = /** @class */ (function (_super) {
         var self = this;
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
-        cc.director.on("ballToHole", this.ballToHoleHandle, this);
     };
-    Game.prototype.ballToHoleHandle = function () {
-        var self = this;
-        if (!self.over) {
-            // 关闭物理系统
-            cc.director.getPhysicsManager().enabled = false;
-            self.CurState = GameState.END;
-            self.canMove = false;
-            self.over = true;
-            self.Dir = Direction.NONE;
-            var worldPosition = self.holeCon.convertToWorldSpace(cc.v2(self.holeWinNode.x, self.holeWinNode.y));
-            var localPosition = self.node.convertToNodeSpaceAR(worldPosition);
-            cc.tween(self.ball).to(0.5, {
-                x: localPosition.x,
-                y: localPosition.y
-            }).call(function () {
-                console.log("游戏结束");
-                // 
-                cc.tween(self.ball).to(0.5, {
-                    scale: 0
-                }).start();
-            }).start();
-            self.board.getComponent(cc.Animation).play("boardW");
-            var winAnimName = self.holeWinNode.getComponent(cc.Animation).getClips()[2].name;
-            self.holeWinNode.getComponent(cc.Animation).play(winAnimName);
-            // cc.director.emit("over");
-        }
+    Game.prototype.ballToHoleHandle = function (targetNode) {
+        return __awaiter(this, void 0, Promise, function () {
+            var self, worldPosition, localPosition_1;
+            return __generator(this, function (_a) {
+                self = this;
+                if (!self.over) {
+                    // 关闭物理系统
+                    cc.director.getPhysicsManager().enabled = false;
+                    self.CurState = GameState.END;
+                    self.canMove = false;
+                    self.over = true;
+                    self.Dir = Direction.NONE;
+                    worldPosition = self.holeCon.convertToWorldSpace(cc.v2(targetNode.x, targetNode.y));
+                    localPosition_1 = self.node.convertToNodeSpaceAR(worldPosition);
+                    return [2 /*return*/, new Promise(function (resolve, reject) {
+                            cc.tween(self.ball).to(0.3, {
+                                x: localPosition_1.x,
+                                y: localPosition_1.y
+                            }).call(function () {
+                                console.log("游戏结束");
+                                cc.tween(self.ball).to(0.2, {
+                                    scale: 0
+                                }).call(function () {
+                                    resolve();
+                                }).start();
+                            }).start();
+                            self.board.getComponent(cc.Animation).play("boardW");
+                            if (targetNode.group === "holewin") {
+                                var winAnimName = self.holeWinNode.getComponent(cc.Animation).getClips()[2].name;
+                                self.holeWinNode.getComponent(cc.Animation).play(winAnimName);
+                            }
+                        })];
+                    // cc.director.emit("over");
+                }
+                return [2 /*return*/];
+            });
+        });
     };
     Object.defineProperty(Game.prototype, "Dir", {
         set: function (dir) {
@@ -331,25 +385,32 @@ var Game = /** @class */ (function (_super) {
         if (self.startTime) {
             self.timeUsed += dt;
             // self.timeUsed = Math.floor(self.timeUsed);
-            var minutes = Math.floor(self.timeUsed / 60);
-            var seconds = Math.floor(self.timeUsed % 60);
-            if (minutes < 10) {
-                if (seconds < 10) {
-                    self.levelLabel.string = "0" + minutes + ":0" + seconds;
-                }
-                else {
-                    self.levelLabel.string = "0" + minutes + ":" + seconds;
-                }
+            this.updateTimeByTotalTime(self.timeUsed, self.levelLabel);
+        }
+    };
+    Game.prototype.updateTimeByTotalTime = function (totalTime, targetLabel) {
+        var self = this;
+        var resString = "";
+        var minutes = Math.floor(totalTime / 60);
+        var seconds = Math.floor(totalTime % 60);
+        if (minutes < 10) {
+            if (seconds < 10) {
+                targetLabel.string = "0" + minutes + ":0" + seconds;
             }
             else {
-                if (seconds < 10) {
-                    self.levelLabel.string = minutes + ":0" + seconds;
-                }
-                else {
-                    self.levelLabel.string = minutes + ":" + seconds;
-                }
+                targetLabel.string = "0" + minutes + ":" + seconds;
             }
         }
+        else {
+            if (seconds < 10) {
+                targetLabel.string = minutes + ":0" + seconds;
+            }
+            else {
+                targetLabel.string = minutes + ":" + seconds;
+            }
+        }
+        resString = targetLabel.string;
+        return resString;
     };
     Game.prototype.update = function (dt) {
         var self = this;
@@ -408,6 +469,9 @@ var Game = /** @class */ (function (_super) {
     __decorate([
         property(cc.Node)
     ], Game.prototype, "holeCon", void 0);
+    __decorate([
+        property(cc.Node)
+    ], Game.prototype, "overMenu", void 0);
     Game = __decorate([
         ccclass
     ], Game);

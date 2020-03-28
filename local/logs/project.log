@@ -1,73 +1,73 @@
-2020-03-26T01:46:55.813Z - normal: Load ~/.CocosCreator/settings.json
-2020-03-26T01:46:55.868Z - normal: Initializing Asset Database
-2020-03-26T01:46:55.872Z - normal: checking language setting...
-2020-03-26T01:46:55.872Z - normal: Language: zh
-2020-03-26T01:46:56.508Z - success: preview server running at http://localhost:7456
-2020-03-26T01:46:56.548Z - success: protocol editor-framework registered
-2020-03-26T01:46:56.548Z - success: protocol app registered
-2020-03-26T01:46:56.548Z - success: protocol theme registered
-2020-03-26T01:46:56.548Z - success: protocol packages registered
-2020-03-26T01:46:56.548Z - success: protocol uuid registerred
-2020-03-26T01:46:56.549Z - success: protocol db registerred
-2020-03-26T01:46:56.549Z - success: protocol thumbnail registerred
-2020-03-26T01:46:56.549Z - success: protocol unpack registerred
-2020-03-26T01:46:56.549Z - success: protocol disable-commonjs registerred
-2020-03-26T01:46:56.629Z - normal: connected!
-2020-03-26T01:46:56.630Z - normal: Check project /Users/lck/ccc_project/movingupGame/movingUp
-2020-03-26T01:46:56.632Z - normal: Initializing project /Users/lck/ccc_project/movingupGame/movingUp
-2020-03-26T01:46:56.682Z - success: adapters loaded
-2020-03-26T01:46:56.705Z - success: asset-db-debugger loaded
-2020-03-26T01:46:56.846Z - success: fb-audience-network loaded
-2020-03-26T01:46:56.893Z - success: fb-live-stream loaded
-2020-03-26T01:46:56.896Z - success: google-play-instant loaded
-2020-03-26T01:46:56.902Z - success: huawei-runtime loaded
-2020-03-26T01:46:56.904Z - success: jkw-adapter loaded
-2020-03-26T01:46:56.906Z - success: jsb-adapter loaded
-2020-03-26T01:46:56.911Z - success: oppo-runtime loaded
-2020-03-26T01:46:56.936Z - success: package-manager loaded
-2020-03-26T01:46:56.937Z - success: qtt-adapter loaded
-2020-03-26T01:46:56.939Z - success: runtime-dev-tools loaded
-2020-03-26T01:46:56.965Z - success: sdkbox loaded
-2020-03-26T01:46:56.987Z - success: ui-kit-preview-extra loaded
-2020-03-26T01:46:57.010Z - success: ui-kit-preview loaded
-2020-03-26T01:46:57.016Z - success: vivo-runtime loaded
-2020-03-26T01:46:57.018Z - success: alipay-minigame loaded
-2020-03-26T01:46:57.086Z - success: assets loaded
-2020-03-26T01:46:57.091Z - success: baidugame-opendata loaded
-2020-03-26T01:46:57.095Z - success: baidugame loaded
-2020-03-26T01:46:57.125Z - success: builder loaded
-2020-03-26T01:46:57.371Z - success: cocos-services loaded
-2020-03-26T01:46:57.394Z - success: console loaded
-2020-03-26T01:46:57.404Z - success: fb-instant-games loaded
-2020-03-26T01:46:57.429Z - success: game-window loaded
-2020-03-26T01:46:57.431Z - success: google-instant-games loaded
-2020-03-26T01:46:57.453Z - success: hierarchy loaded
-2020-03-26T01:46:57.504Z - success: inspector loaded
-2020-03-26T01:46:57.907Z - success: cpk-publish loaded
-2020-03-26T01:46:57.911Z - success: keystore loaded
-2020-03-26T01:46:57.947Z - success: node-library loaded
-2020-03-26T01:46:57.949Z - success: open-recent-items loaded
-2020-03-26T01:46:57.951Z - success: package-asset loaded
-2020-03-26T01:46:57.953Z - success: preferences loaded
-2020-03-26T01:46:57.975Z - success: project-exporter loaded
-2020-03-26T01:46:58.004Z - success: project-importer loaded
-2020-03-26T01:46:58.026Z - success: project-settings loaded
-2020-03-26T01:46:58.037Z - success: qtt-runtime loaded
-2020-03-26T01:46:58.062Z - success: scene loaded
-2020-03-26T01:46:58.063Z - success: simulator-debugger loaded
-2020-03-26T01:46:58.063Z - success: sprite-editor loaded
-2020-03-26T01:46:58.086Z - success: store loaded
-2020-03-26T01:46:58.111Z - success: timeline loaded
-2020-03-26T01:46:58.113Z - success: wechatgame-opendata loaded
-2020-03-26T01:46:58.119Z - success: wechatgame loaded
-2020-03-26T01:46:58.123Z - success: xiaomi-runtime loaded
-2020-03-26T01:46:58.538Z - info: Cocos Service load base data!
-2020-03-26T01:46:58.764Z - normal: Initializing Cocos2d
-2020-03-26T01:46:59.141Z - normal: Initializing engine extends
-2020-03-26T01:46:59.904Z - normal: Loading packages
-2020-03-26T01:46:59.914Z - normal: Watching packages
-2020-03-26T01:46:59.987Z - normal: Run Application
-2020-03-26T01:47:03.309Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+2020-03-28T12:01:20.579Z - normal: Load ~/.CocosCreator/settings.json
+2020-03-28T12:01:20.637Z - normal: Initializing Asset Database
+2020-03-28T12:01:20.640Z - normal: checking language setting...
+2020-03-28T12:01:20.640Z - normal: Language: zh
+2020-03-28T12:01:21.236Z - success: preview server running at http://localhost:7456
+2020-03-28T12:01:21.272Z - success: protocol editor-framework registered
+2020-03-28T12:01:21.273Z - success: protocol app registered
+2020-03-28T12:01:21.273Z - success: protocol theme registered
+2020-03-28T12:01:21.273Z - success: protocol packages registered
+2020-03-28T12:01:21.273Z - success: protocol uuid registerred
+2020-03-28T12:01:21.273Z - success: protocol db registerred
+2020-03-28T12:01:21.273Z - success: protocol thumbnail registerred
+2020-03-28T12:01:21.273Z - success: protocol unpack registerred
+2020-03-28T12:01:21.274Z - success: protocol disable-commonjs registerred
+2020-03-28T12:01:21.351Z - normal: connected!
+2020-03-28T12:01:21.353Z - normal: Check project /Users/lck/ccc_project/movingupGame/movingUp
+2020-03-28T12:01:21.354Z - normal: Initializing project /Users/lck/ccc_project/movingupGame/movingUp
+2020-03-28T12:01:21.391Z - success: adapters loaded
+2020-03-28T12:01:21.418Z - success: asset-db-debugger loaded
+2020-03-28T12:01:21.554Z - success: fb-audience-network loaded
+2020-03-28T12:01:21.588Z - success: fb-live-stream loaded
+2020-03-28T12:01:21.592Z - success: google-play-instant loaded
+2020-03-28T12:01:21.598Z - success: huawei-runtime loaded
+2020-03-28T12:01:21.601Z - success: jkw-adapter loaded
+2020-03-28T12:01:21.603Z - success: jsb-adapter loaded
+2020-03-28T12:01:21.607Z - success: oppo-runtime loaded
+2020-03-28T12:01:21.634Z - success: package-manager loaded
+2020-03-28T12:01:21.636Z - success: qtt-adapter loaded
+2020-03-28T12:01:21.638Z - success: runtime-dev-tools loaded
+2020-03-28T12:01:21.664Z - success: sdkbox loaded
+2020-03-28T12:01:21.691Z - success: ui-kit-preview-extra loaded
+2020-03-28T12:01:21.713Z - success: ui-kit-preview loaded
+2020-03-28T12:01:21.718Z - success: vivo-runtime loaded
+2020-03-28T12:01:21.720Z - success: alipay-minigame loaded
+2020-03-28T12:01:21.797Z - success: assets loaded
+2020-03-28T12:01:21.802Z - success: baidugame-opendata loaded
+2020-03-28T12:01:21.806Z - success: baidugame loaded
+2020-03-28T12:01:21.832Z - success: builder loaded
+2020-03-28T12:01:22.051Z - success: cocos-services loaded
+2020-03-28T12:01:22.078Z - success: console loaded
+2020-03-28T12:01:22.089Z - success: fb-instant-games loaded
+2020-03-28T12:01:22.114Z - success: game-window loaded
+2020-03-28T12:01:22.115Z - success: google-instant-games loaded
+2020-03-28T12:01:22.144Z - success: hierarchy loaded
+2020-03-28T12:01:22.194Z - success: inspector loaded
+2020-03-28T12:01:22.577Z - success: cpk-publish loaded
+2020-03-28T12:01:22.582Z - success: keystore loaded
+2020-03-28T12:01:22.617Z - success: node-library loaded
+2020-03-28T12:01:22.619Z - success: open-recent-items loaded
+2020-03-28T12:01:22.621Z - success: package-asset loaded
+2020-03-28T12:01:22.622Z - success: preferences loaded
+2020-03-28T12:01:22.647Z - success: project-exporter loaded
+2020-03-28T12:01:22.674Z - success: project-importer loaded
+2020-03-28T12:01:22.699Z - success: project-settings loaded
+2020-03-28T12:01:22.710Z - success: qtt-runtime loaded
+2020-03-28T12:01:22.739Z - success: scene loaded
+2020-03-28T12:01:22.741Z - success: simulator-debugger loaded
+2020-03-28T12:01:22.742Z - success: sprite-editor loaded
+2020-03-28T12:01:22.765Z - success: store loaded
+2020-03-28T12:01:22.796Z - success: timeline loaded
+2020-03-28T12:01:22.798Z - success: wechatgame-opendata loaded
+2020-03-28T12:01:22.802Z - success: wechatgame loaded
+2020-03-28T12:01:22.806Z - success: xiaomi-runtime loaded
+2020-03-28T12:01:23.253Z - info: Cocos Service load base data!
+2020-03-28T12:01:23.456Z - normal: Initializing Cocos2d
+2020-03-28T12:01:23.847Z - normal: Initializing engine extends
+2020-03-28T12:01:24.706Z - normal: Loading packages
+2020-03-28T12:01:24.721Z - normal: Watching packages
+2020-03-28T12:01:24.807Z - normal: Run Application
+2020-03-28T12:01:28.153Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
 properties in CCClass can not be abbreviated if they are of type RawAsset.
 Please use the complete form.
 For example, if the type is Texture2D, the previous definition is:
@@ -83,7 +83,7 @@ If you use TS, it should be changed to:
     }
     %s: cc.Texture2D = null;
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T01:48:22.649Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+2020-03-28T12:08:43.869Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
 properties in CCClass can not be abbreviated if they are of type RawAsset.
 Please use the complete form.
 For example, if the type is Texture2D, the previous definition is:
@@ -99,7 +99,7 @@ If you use TS, it should be changed to:
     }
     %s: cc.Texture2D = null;
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T01:48:28.012Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+2020-03-28T12:16:57.949Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
 properties in CCClass can not be abbreviated if they are of type RawAsset.
 Please use the complete form.
 For example, if the type is Texture2D, the previous definition is:
@@ -115,7 +115,7 @@ If you use TS, it should be changed to:
     }
     %s: cc.Texture2D = null;
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T01:54:29.311Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+2020-03-28T12:23:03.315Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
 properties in CCClass can not be abbreviated if they are of type RawAsset.
 Please use the complete form.
 For example, if the type is Texture2D, the previous definition is:
@@ -131,7 +131,7 @@ If you use TS, it should be changed to:
     }
     %s: cc.Texture2D = null;
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T01:56:24.614Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+2020-03-28T12:27:33.490Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
 properties in CCClass can not be abbreviated if they are of type RawAsset.
 Please use the complete form.
 For example, if the type is Texture2D, the previous definition is:
@@ -147,105 +147,7 @@ If you use TS, it should be changed to:
     }
     %s: cc.Texture2D = null;
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T01:57:20.892Z - info: 只有预制节点 "levelItemBtn" 及其子节点会被保存。
-2020-03-26T01:57:21.312Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
-properties in CCClass can not be abbreviated if they are of type RawAsset.
-Please use the complete form.
-For example, if the type is Texture2D, the previous definition is:
-    clickAudio: cc.Texture2D,
-If you use JS, it should be changed to:
-    clickAudio: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-      default: null,     // object's default value is null
-    },
-If you use TS, it should be changed to:
-    %s: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-    }
-    %s: cc.Texture2D = null;
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T01:59:54.892Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
-properties in CCClass can not be abbreviated if they are of type RawAsset.
-Please use the complete form.
-For example, if the type is Texture2D, the previous definition is:
-    clickAudio: cc.Texture2D,
-If you use JS, it should be changed to:
-    clickAudio: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-      default: null,     // object's default value is null
-    },
-If you use TS, it should be changed to:
-    %s: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-    }
-    %s: cc.Texture2D = null;
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T01:59:55.414Z - info: 只有预制节点 "levelItemBtn" 及其子节点会被保存。
-2020-03-26T02:05:35.744Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
-properties in CCClass can not be abbreviated if they are of type RawAsset.
-Please use the complete form.
-For example, if the type is Texture2D, the previous definition is:
-    clickAudio: cc.Texture2D,
-If you use JS, it should be changed to:
-    clickAudio: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-      default: null,     // object's default value is null
-    },
-If you use TS, it should be changed to:
-    %s: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-    }
-    %s: cc.Texture2D = null;
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T02:06:47.990Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
-properties in CCClass can not be abbreviated if they are of type RawAsset.
-Please use the complete form.
-For example, if the type is Texture2D, the previous definition is:
-    clickAudio: cc.Texture2D,
-If you use JS, it should be changed to:
-    clickAudio: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-      default: null,     // object's default value is null
-    },
-If you use TS, it should be changed to:
-    %s: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-    }
-    %s: cc.Texture2D = null;
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T02:09:01.684Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
-properties in CCClass can not be abbreviated if they are of type RawAsset.
-Please use the complete form.
-For example, if the type is Texture2D, the previous definition is:
-    clickAudio: cc.Texture2D,
-If you use JS, it should be changed to:
-    clickAudio: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-      default: null,     // object's default value is null
-    },
-If you use TS, it should be changed to:
-    %s: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-    }
-    %s: cc.Texture2D = null;
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T02:09:52.296Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
-properties in CCClass can not be abbreviated if they are of type RawAsset.
-Please use the complete form.
-For example, if the type is Texture2D, the previous definition is:
-    clickAudio: cc.Texture2D,
-If you use JS, it should be changed to:
-    clickAudio: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-      default: null,     // object's default value is null
-    },
-If you use TS, it should be changed to:
-    %s: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-    }
-    %s: cc.Texture2D = null;
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-03-26T02:11:44.095Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+2020-03-28T12:51:43.184Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
 properties in CCClass can not be abbreviated if they are of type RawAsset.
 Please use the complete form.
 For example, if the type is Texture2D, the previous definition is:

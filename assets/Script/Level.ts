@@ -1,3 +1,5 @@
+import SceneManager from "./SceneManager";
+import { LayerState } from "./consts/Consts";
 
 const {ccclass, property} = cc._decorator;
 
@@ -35,6 +37,9 @@ export default class Level extends cc.Component {
             for(let j = 0; j < this.col; j++) {
                 levelNum++;
                 let levelItemNode: cc.Node = cc.instantiate(this.levetBtn);
+                if(i >= 1) {
+                    levelItemNode.getComponent(cc.Button).interactable = false;
+                }
                 levelItemNode.setPosition(cc.v2(this.startX + j * (this.btnWidth + this.spaceX),this.startY - i * (this.btnHeight + this.spaceY)));
                 this.levelBtnsCon.addChild(levelItemNode);
                 levelItemNode.name = i.toString();
@@ -56,6 +61,10 @@ export default class Level extends cc.Component {
         if(data === "index") {
             cc.director.loadScene("index");
         } else if(data === "setting") {
+            // SceneManager
+            // LayerState
+            let sceneManager: SceneManager = <SceneManager>cc.find("Controller").getComponent("SceneManager");
+            sceneManager.LS = LayerState.SETTING;
             // cc.director.loadScene();
         }
     }

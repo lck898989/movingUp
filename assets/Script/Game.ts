@@ -1,5 +1,6 @@
 import ResourceManager from "./managers/ResourceManager";
 import SceneManager from "./SceneManager";
+import User from "./users/User";
 
 const {ccclass, property} = cc._decorator;
 enum Direction {
@@ -40,6 +41,8 @@ export default class Game extends cc.Component {
     holeLose: cc.Prefab = null;
     @property(cc.Node)
     holeCon: cc.Node = null;
+    @property(cc.Node)
+    overMenu: cc.Node = null;
 
     private speed: number = 1;
     
@@ -61,19 +64,21 @@ export default class Game extends cc.Component {
     private readonly gridHeight: number = 70;
 
     private loseHolePool: cc.NodePool = null;
-    private poolDeep: number = 20;
+    private poolDeep: number = 40;
 
     private holeWinNode: cc.Node = null;
 
     async onLoad () {
+        // this.overMenu.active = false;
         this.gridMap = [];
         cc.macro.ENABLE_WEBGL_ANTIALIAS = true;
         cc.director.getPhysicsManager().enabled = true;
         let self = this;
         console.log("bg is ",this.bg);
-        cc.director.on("ballToBoard",this.ballToBoardHandle,this);
+        let sceneManager: SceneManager = <SceneManager>cc.find("Controller").getComponent("SceneManager");
+        let levelStr: string = sceneManager.getLevel().toString();
         // 加载关卡数据
-        let levelData: cc.JsonAsset = await ResourceManager.getInstance().loadResourceByUrl(`level${SceneManager.getInstance().getLevel()}`,cc.JsonAsset);
+        let levelData: cc.JsonAsset = await ResourceManager.getInstance().loadResourceByUrl(`level${levelStr}`,cc.JsonAsset);
         this.levelData = levelData.json;
         console.log("levelData is ",this.levelData);
         cc.director.on("ballToHole",this.overHandle,this);
@@ -129,9 +134,11 @@ export default class Game extends cc.Component {
                     this.holeWinNode = cc.instantiate(this.holeWin);
                     this.holeCon.addChild(this.holeWinNode);
                     this.holeWinNode.setPosition(this.gridMap[posObj.row][posObj.col]);
+                    this.holeWinNode.scale = Number(objects[i].scaleMultiplier);
                 } else {
                     let posObj: any = objects[i].pos;
                     let loseHoleNode: cc.Node = this.loseHolePool.get();
+                    console.log("从节点池中获取的节点是：",loseHoleNode);
                     if(loseHoleNode) {
                         loseHoleNode.setPosition(this.gridMap[posObj.row][posObj.col]);
                         this.holeCon.addChild(loseHoleNode);
@@ -141,13 +148,41 @@ export default class Game extends cc.Component {
         }
         // this.ball.zIndex = this.ball.parent
     }
-    
+    // 球碰到地板了说明是掉下去了游戏结束
     private ballToLandHandle(): void {
         this.startTime = false;
+        this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "TRY AGAIN";
+        let inName: string = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+        this.overMenu.getComponent(cc.Animation).play(inName);
+        this.over = true;
     }
     // 游戏结束
-    private overHandle(): void {
+    private async overHandle(data: any) {
         this.startTime = false;
+        if(data.over === "win") {
+            // 胜利
+            console.log("游戏胜利");
+            await this.ballToHoleHandle(this.holeWinNode);
+            this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "SUCCESS";
+            this.overMenu.getChildByName("successCon").active = true;
+            let successLabel: cc.Label = <cc.Label>this.overMenu.getChildByName("successCon").getChildByName("time").getComponent(cc.Label);
+            let bestTimeString: string  = this.updateTimeByTotalTime(this.timeUsed,successLabel);
+
+            let inName: string = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+            this.overMenu.getComponent(cc.Animation).play(inName);
+            // 记录该用户最好成绩
+            let userCom: User = <User>cc.find("Controller").getComponent("User");
+            userCom.setBestRecord(Number(cc.find("Controller").getComponent("SceneManager").getLevel().toString()),bestTimeString);
+            
+        } else if(data.over === "lose") {
+            await this.ballToHoleHandle(data.node);
+            console.log("游戏失败");
+            // this.overMenu.active = true;
+            this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "TRY AGAIN";
+            let inName: string = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+            this.overMenu.getComponent(cc.Animation).play(inName);
+        }
+        
     }
     private ballToBoardHandle(): void {
         let self = this;
@@ -189,9 +224,8 @@ export default class Game extends cc.Component {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,this.onKeyDown,this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP,this.onKeyUp,this);
 
-        cc.director.on("ballToHole",this.ballToHoleHandle,this);  
     }
-    private ballToHoleHandle(): void {
+    private async ballToHoleHandle(targetNode: cc.Node): Promise<any> {
         let self = this;
         if(!self.over) {
             // 关闭物理系统
@@ -200,21 +234,26 @@ export default class Game extends cc.Component {
             self.canMove = false;
             self.over = true;
             self.Dir = Direction.NONE;
-            let worldPosition: cc.Vec2 = self.holeCon.convertToWorldSpace(cc.v2(self.holeWinNode.x,self.holeWinNode.y));
+            let worldPosition: cc.Vec2 = self.holeCon.convertToWorldSpace(cc.v2(targetNode.x,targetNode.y));
             let localPosition: cc.Vec2 = self.node.convertToNodeSpaceAR(worldPosition);
-            cc.tween(self.ball).to(0.5,{
-                x: localPosition.x,
-                y: localPosition.y
-            }).call(() => {
-                console.log("游戏结束");
-                // 
-                cc.tween(self.ball).to(0.5,{
-                    scale: 0
+            return new Promise((resolve,reject) => {
+                cc.tween(self.ball).to(0.3,{
+                    x: localPosition.x,
+                    y: localPosition.y
+                }).call(() => {
+                    console.log("游戏结束");
+                    cc.tween(self.ball).to(0.2,{
+                        scale: 0
+                    }).call(() => {
+                        resolve();
+                    }).start();
                 }).start();
-            }).start();
-            self.board.getComponent(cc.Animation).play("boardW");
-            let winAnimName: string = self.holeWinNode.getComponent(cc.Animation).getClips()[2].name;
-            self.holeWinNode.getComponent(cc.Animation).play(winAnimName);
+                self.board.getComponent(cc.Animation).play("boardW");
+                if(targetNode.group === "holewin") {
+                    let winAnimName: string = self.holeWinNode.getComponent(cc.Animation).getClips()[2].name;
+                    self.holeWinNode.getComponent(cc.Animation).play(winAnimName);
+                }
+            });
             // cc.director.emit("over");
         }
     }
@@ -270,28 +309,36 @@ export default class Game extends cc.Component {
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN,this.onKeyDown,this);
         cc.director.off("ballToHole",this.ballToHoleHandle,this);
         cc.director.off("ballToBoard",this.ballToBoardHandle,this);
+        
     }
     private updateLevelOrTime(dt: number): void {
         let self = this;
         if(self.startTime) {
             self.timeUsed += dt;
             // self.timeUsed = Math.floor(self.timeUsed);
-            let minutes: number = Math.floor(self.timeUsed / 60);
-            let seconds: number = Math.floor(self.timeUsed % 60);
-            if(minutes < 10) {
-                if(seconds < 10) {
-                    self.levelLabel.string = `0${minutes}:0${seconds}`;
-                } else {
-                    self.levelLabel.string = `0${minutes}:${seconds}`;
-                }
+            this.updateTimeByTotalTime(self.timeUsed,self.levelLabel);
+        }
+    }
+    private updateTimeByTotalTime(totalTime: number,targetLabel: cc.Label): string {
+        let self = this;
+        let resString: string = "";
+        let minutes: number = Math.floor(totalTime / 60);
+        let seconds: number = Math.floor(totalTime % 60);
+        if(minutes < 10) {
+            if(seconds < 10) {
+                targetLabel.string = `0${minutes}:0${seconds}`;
             } else {
-                if(seconds < 10) {
-                    self.levelLabel.string = `${minutes}:0${seconds}`;
-                } else {
-                    self.levelLabel.string = `${minutes}:${seconds}`;
-                }
+                targetLabel.string = `0${minutes}:${seconds}`;
+            }
+        } else {
+            if(seconds < 10) {
+                targetLabel.string = `${minutes}:0${seconds}`;
+            } else {
+                targetLabel.string = `${minutes}:${seconds}`;
             }
         }
+        resString = targetLabel.string;
+        return resString;
     }
     update (dt) {
         let self = this;
