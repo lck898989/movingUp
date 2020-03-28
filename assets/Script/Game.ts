@@ -160,19 +160,22 @@ export default class Game extends cc.Component {
     private async overHandle(data: any) {
         this.startTime = false;
         if(data.over === "win") {
-            // 胜利
-            console.log("游戏胜利");
+            console.log("开始播放游戏场景动画");
             await this.ballToHoleHandle(this.holeWinNode);
-            this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "SUCCESS";
-            this.overMenu.getChildByName("successCon").active = true;
-            let successLabel: cc.Label = <cc.Label>this.overMenu.getChildByName("successCon").getChildByName("time").getComponent(cc.Label);
-            let bestTimeString: string  = this.updateTimeByTotalTime(this.timeUsed,successLabel);
-
-            let inName: string = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
-            this.overMenu.getComponent(cc.Animation).play(inName);
-            // 记录该用户最好成绩
-            let userCom: User = <User>cc.find("Controller").getComponent("User");
-            userCom.setBestRecord(Number(cc.find("Controller").getComponent("SceneManager").getLevel().toString()),bestTimeString);
+            console.log("游戏场景动画播放完毕");
+            console.log("开始播放结束菜单动画");
+            if(this.over) {
+                this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "SUCCESS";
+                this.overMenu.getChildByName("successCon").active = true;
+                let successLabel: cc.Label = <cc.Label>this.overMenu.getChildByName("successCon").getChildByName("time").getComponent(cc.Label);
+                let bestTimeString: string  = this.updateTimeByTotalTime(this.timeUsed,successLabel);
+    
+                let inName: string = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+                this.overMenu.getComponent(cc.Animation).play(inName);
+                // 记录该用户最好成绩
+                let userCom: User = <User>cc.find("Controller").getComponent("User");
+                userCom.setBestRecord(Number(cc.find("Controller").getComponent("SceneManager").getLevel().toString()),bestTimeString);
+            }
             
         } else if(data.over === "lose") {
             await this.ballToHoleHandle(data.node);
@@ -230,10 +233,6 @@ export default class Game extends cc.Component {
         if(!self.over) {
             // 关闭物理系统
             cc.director.getPhysicsManager().enabled = false;
-            self.CurState = GameState.END;
-            self.canMove = false;
-            self.over = true;
-            self.Dir = Direction.NONE;
             let worldPosition: cc.Vec2 = self.holeCon.convertToWorldSpace(cc.v2(targetNode.x,targetNode.y));
             let localPosition: cc.Vec2 = self.node.convertToNodeSpaceAR(worldPosition);
             return new Promise((resolve,reject) => {
@@ -245,6 +244,7 @@ export default class Game extends cc.Component {
                     cc.tween(self.ball).to(0.2,{
                         scale: 0
                     }).call(() => {
+                        self.CurState = GameState.END;
                         resolve();
                     }).start();
                 }).start();

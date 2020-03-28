@@ -38,6 +38,8 @@ export default class User extends cc.Component {
                 if(curTimeString === "00:00") {
                     // 还没有最好成绩直接存储最后成绩
                     this.bestRecord[level - 1].time = time;
+                    // 存储到计算机中去
+                    // cc.sys.localStorage.setItem();
                 } else {
                     // 有最好成绩检查是否替换最好成绩
                     if(this.convertTimeStringToNumber(curTimeString) > this.convertTimeStringToNumber(time)) {
@@ -47,6 +49,7 @@ export default class User extends cc.Component {
                 }
             }
         }
+        cc.sys.localStorage.setItem("my",JSON.stringify(this.bestRecord));
     }
     // 将字符串类型的时间转换为数字以便进行比较
     private convertTimeStringToNumber(timestring: string): number {
@@ -59,12 +62,17 @@ export default class User extends cc.Component {
 
     }
     public getBestRecord(level: number): BestRecore {
-        for(let i = 0; i < this.bestRecord.length; i++) {
+        let res: BestRecore[];
+        if(!cc.sys.localStorage.getItem("my")) {
+            res = null;
+        } else {
+            res = <BestRecore[]>JSON.parse(cc.sys.localStorage.getItem("my"));
+        }
+        for(let i = 0; i < res.length; i++) {
             if(this.bestRecord[i].level === level) {
                 return this.bestRecord[i];
             }
         }
-        return null;
     }
     public setLevel(level: number): void {
         this.level = level;

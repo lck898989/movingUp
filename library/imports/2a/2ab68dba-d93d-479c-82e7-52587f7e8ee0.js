@@ -211,19 +211,22 @@ var Game = /** @class */ (function (_super) {
                     case 0:
                         this.startTime = false;
                         if (!(data.over === "win")) return [3 /*break*/, 2];
-                        // 胜利
-                        console.log("游戏胜利");
+                        console.log("开始播放游戏场景动画");
                         return [4 /*yield*/, this.ballToHoleHandle(this.holeWinNode)];
                     case 1:
                         _a.sent();
-                        this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "SUCCESS";
-                        this.overMenu.getChildByName("successCon").active = true;
-                        successLabel = this.overMenu.getChildByName("successCon").getChildByName("time").getComponent(cc.Label);
-                        bestTimeString = this.updateTimeByTotalTime(this.timeUsed, successLabel);
-                        inName = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
-                        this.overMenu.getComponent(cc.Animation).play(inName);
-                        userCom = cc.find("Controller").getComponent("User");
-                        userCom.setBestRecord(Number(cc.find("Controller").getComponent("SceneManager").getLevel().toString()), bestTimeString);
+                        console.log("游戏场景动画播放完毕");
+                        console.log("开始播放结束菜单动画");
+                        if (this.over) {
+                            this.overMenu.getChildByName("tryLabel").getComponent(cc.Label).string = "SUCCESS";
+                            this.overMenu.getChildByName("successCon").active = true;
+                            successLabel = this.overMenu.getChildByName("successCon").getChildByName("time").getComponent(cc.Label);
+                            bestTimeString = this.updateTimeByTotalTime(this.timeUsed, successLabel);
+                            inName = this.overMenu.getComponent(cc.Animation).getClips()[0].name;
+                            this.overMenu.getComponent(cc.Animation).play(inName);
+                            userCom = cc.find("Controller").getComponent("User");
+                            userCom.setBestRecord(Number(cc.find("Controller").getComponent("SceneManager").getLevel().toString()), bestTimeString);
+                        }
                         return [3 /*break*/, 4];
                     case 2:
                         if (!(data.over === "lose")) return [3 /*break*/, 4];
@@ -293,10 +296,6 @@ var Game = /** @class */ (function (_super) {
                 if (!self.over) {
                     // 关闭物理系统
                     cc.director.getPhysicsManager().enabled = false;
-                    self.CurState = GameState.END;
-                    self.canMove = false;
-                    self.over = true;
-                    self.Dir = Direction.NONE;
                     worldPosition = self.holeCon.convertToWorldSpace(cc.v2(targetNode.x, targetNode.y));
                     localPosition_1 = self.node.convertToNodeSpaceAR(worldPosition);
                     return [2 /*return*/, new Promise(function (resolve, reject) {
@@ -308,6 +307,7 @@ var Game = /** @class */ (function (_super) {
                                 cc.tween(self.ball).to(0.2, {
                                     scale: 0
                                 }).call(function () {
+                                    self.CurState = GameState.END;
                                     resolve();
                                 }).start();
                             }).start();

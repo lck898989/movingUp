@@ -35,7 +35,9 @@ var LevelItem = /** @class */ (function (_super) {
     LevelItem.prototype.start = function () {
         var userCom = cc.find("Controller").getComponent("User");
         var bestRecord = userCom.getBestRecord(Number(this.levelLabel.string));
-        this.bestLabel.string = bestRecord.time;
+        if (bestRecord) {
+            this.bestLabel.string = bestRecord.time;
+        }
     };
     LevelItem.prototype.getLevel = function () {
         return this.levelLabel.string;

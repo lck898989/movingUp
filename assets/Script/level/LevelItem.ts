@@ -13,7 +13,9 @@ export default class LevelItem extends cc.Component {
     start () {
         let userCom: User = <User>cc.find("Controller").getComponent("User");
         let bestRecord: {level: number,time: string} = userCom.getBestRecord(Number(this.levelLabel.string));
-        this.bestLabel.string = bestRecord.time;
+        if(bestRecord) {
+            this.bestLabel.string = bestRecord.time;
+        }
     }
     public getLevel(): string {
         return this.levelLabel.string;

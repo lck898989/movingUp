@@ -62,6 +62,8 @@ var User = /** @class */ (function (_super) {
                 if (curTimeString === "00:00") {
                     // 还没有最好成绩直接存储最后成绩
                     this.bestRecord[level - 1].time = time;
+                    // 存储到计算机中去
+                    // cc.sys.localStorage.setItem();
                 }
                 else {
                     // 有最好成绩检查是否替换最好成绩
@@ -72,6 +74,7 @@ var User = /** @class */ (function (_super) {
                 }
             }
         }
+        cc.sys.localStorage.setItem("my", JSON.stringify(this.bestRecord));
     };
     // 将字符串类型的时间转换为数字以便进行比较
     User.prototype.convertTimeStringToNumber = function (timestring) {
@@ -83,12 +86,18 @@ var User = /** @class */ (function (_super) {
         return res;
     };
     User.prototype.getBestRecord = function (level) {
-        for (var i = 0; i < this.bestRecord.length; i++) {
+        var res;
+        if (!cc.sys.localStorage.getItem("my")) {
+            res = null;
+        }
+        else {
+            res = JSON.parse(cc.sys.localStorage.getItem("my"));
+        }
+        for (var i = 0; i < res.length; i++) {
             if (this.bestRecord[i].level === level) {
                 return this.bestRecord[i];
             }
         }
-        return null;
     };
     User.prototype.setLevel = function (level) {
         this.level = level;
