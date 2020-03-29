@@ -122,6 +122,7 @@ var Game = /** @class */ (function (_super) {
                         console.log("bg is ", this.bg);
                         sceneManager = cc.find("Controller").getComponent("SceneManager");
                         levelStr = sceneManager.getLevel().toString();
+                        this.levelLabel.string = "level" + levelStr;
                         return [4 /*yield*/, ResourceManager_1.default.getInstance().loadResourceByUrl("level" + levelStr, cc.JsonAsset)];
                     case 1:
                         levelData = _a.sent();

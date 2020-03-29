@@ -77,6 +77,7 @@ export default class Game extends cc.Component {
         console.log("bg is ",this.bg);
         let sceneManager: SceneManager = <SceneManager>cc.find("Controller").getComponent("SceneManager");
         let levelStr: string = sceneManager.getLevel().toString();
+        this.levelLabel.string = "level" + levelStr;
         // 加载关卡数据
         let levelData: cc.JsonAsset = await ResourceManager.getInstance().loadResourceByUrl(`level${levelStr}`,cc.JsonAsset);
         this.levelData = levelData.json;
