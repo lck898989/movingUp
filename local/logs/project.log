@@ -572,3 +572,333 @@ If you use TS, it should be changed to:
     }
     %s: cc.Texture2D = null;
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:33:32.723Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:34:21.455Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:38:02.748Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:39:16.031Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:43:22.175Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:49:47.956Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:52:26.416Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:56:43.425Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T13:57:49.277Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T14:00:11.437Z - warn: Please change the definition of property 'clickAudio' in class 'Level'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    clickAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    clickAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-03-29T14:27:45.884Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/lck/ccc_project/movingupGame/movingUp/build",
+  "debug": false,
+  "dest": "/Users/lck/ccc_project/movingupGame/movingUp/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "44db7a56-5250-4494-b411-6906be12d817",
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "effd9623-7be2-49dc-af4a-6a35eb2f2d2d"
+  ],
+  "sourceMaps": false,
+  "startScene": "44db7a56-5250-4494-b411-6906be12d817",
+  "template": "link",
+  "title": "movingUp",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "win32": {},
+  "xxteaKey": "b10a1665-accd-40",
+  "zipCompressJs": true,
+  "project": "/Users/lck/ccc_project/movingupGame/movingUp",
+  "projectName": "movingUp",
+  "debugBuildWorker": false
+}
+2020-03-29T14:27:45.885Z - normal: Building /Users/lck/ccc_project/movingupGame/movingUp
+2020-03-29T14:27:45.885Z - normal: Destination /Users/lck/ccc_project/movingupGame/movingUp/build/web-mobile
+2020-03-29T14:27:45.958Z - normal: Delete /Users/lck/ccc_project/movingupGame/movingUp/build/web-mobile/subpackages/**/*,/Users/lck/ccc_project/movingupGame/movingUp/build/web-mobile/**/*
+2020-03-29T14:27:48.291Z - normal: Start building assets
+2020-03-29T14:27:48.291Z - normal: Start spawn build-worker
+2020-03-29T14:27:48.851Z - normal: Finish spawn build-worker
+2020-03-29T14:27:48.851Z - normal: Start init build-worker
+2020-03-29T14:27:50.858Z - normal: Finish init build-worker
+2020-03-29T14:27:50.858Z - normal: Start build-assets in worker
+2020-03-29T14:27:51.406Z - normal: Finish build-assets in worker
+2020-03-29T14:27:51.408Z - normal: Finish building assets
+2020-03-29T14:27:51.423Z - normal: Start building plugin scripts
+2020-03-29T14:27:51.457Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-03-29T14:27:51.464Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-03-29T14:27:51.479Z - normal: Built to "/Users/lck/ccc_project/movingupGame/movingUp/build/web-mobile" successfully
+2020-03-29T14:30:24.334Z - normal: Start building with options : {
+  "actualPlatform": "ios",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/lck/ccc_project/movingupGame/movingUp/build",
+  "debug": false,
+  "dest": "/Users/lck/ccc_project/movingupGame/movingUp/build/jsb-link",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "ios",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49",
+    "44db7a56-5250-4494-b411-6906be12d817",
+    "effd9623-7be2-49dc-af4a-6a35eb2f2d2d"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "link",
+  "title": "movingUp",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "win32": {},
+  "xxteaKey": "b10a1665-accd-40",
+  "zipCompressJs": true,
+  "project": "/Users/lck/ccc_project/movingupGame/movingUp",
+  "projectName": "movingUp",
+  "debugBuildWorker": false
+}
+2020-03-29T14:30:24.335Z - normal: Building /Users/lck/ccc_project/movingupGame/movingUp
+2020-03-29T14:30:24.335Z - normal: Destination /Users/lck/ccc_project/movingupGame/movingUp/build/jsb-link
+2020-03-29T14:30:24.336Z - normal: Delete /Users/lck/ccc_project/movingupGame/movingUp/build/jsb-link/subpackages/**/*,/Users/lck/ccc_project/movingupGame/movingUp/build/jsb-link/res/**/*,/Users/lck/ccc_project/movingupGame/movingUp/build/jsb-link/src/**/*
+2020-03-29T14:30:24.357Z - normal: Checked Python Version [2.7.16]
+2020-03-29T14:30:25.771Z - normal: Creating native cocos project to  /Users/lck/ccc_project/movingupGame/movingUp/build/jsb-link
+2020-03-29T14:30:57.646Z - normal: Start building assets
+2020-03-29T14:30:57.646Z - normal: Start spawn build-worker
+2020-03-29T14:30:58.185Z - normal: Finish spawn build-worker
+2020-03-29T14:30:58.185Z - normal: Start init build-worker
+2020-03-29T14:30:59.842Z - normal: Finish init build-worker
+2020-03-29T14:30:59.843Z - normal: Start build-assets in worker
+2020-03-29T14:30:59.925Z - info: Enable "内联所有 SpriteFrame" in native platform will increase the package size used in hot update.
+2020-03-29T14:31:00.340Z - normal: Finish build-assets in worker
+2020-03-29T14:31:00.343Z - normal: Finish building assets
+2020-03-29T14:31:00.358Z - normal: Start building plugin scripts
+2020-03-29T14:31:00.387Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-03-29T14:31:00.426Z - normal: Checked Python Version [2.7.16]
+2020-03-29T14:31:01.695Z - normal: Built to "/Users/lck/ccc_project/movingupGame/movingUp/build/jsb-link" successfully
+2020-03-29T14:31:52.669Z - normal: Checked Python Version [2.7.16]
+2020-03-29T14:31:53.822Z - normal: Start to compile native project. Please wait...
+2020-03-29T14:31:53.823Z - normal: The log file path [ /Users/lck/.CocosCreator/logs/native.log ]
+2020-03-29T14:33:32.358Z - normal: Compile native project successfully.
+2020-03-29T14:37:30.816Z - info: shutdown preview server

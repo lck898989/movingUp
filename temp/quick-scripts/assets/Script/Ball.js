@@ -58,6 +58,8 @@ var Ball = /** @class */ (function (_super) {
     Ball.prototype.start = function () {
     };
     Ball.prototype.update = function (dt) {
+        // console.log("物理系统状态",cc.director.getPhysicsManager().enabled);
+        console.log("ball.y is ", this.node.y);
     };
     Ball = __decorate([
         ccclass

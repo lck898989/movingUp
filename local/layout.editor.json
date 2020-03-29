@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1698,
-      "y": -10,
-      "width": 1440,
-      "height": 877,
+      "x": 1440,
+      "y": -82,
+      "width": 1920,
+      "height": 1080,
       "layout": {
         "children": [
           {
@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 386,
+                "height": 649,
                 "type": "panel",
-                "width": 228
+                "width": 304
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 407,
+                "height": 369,
                 "type": "panel",
-                "width": 228
+                "width": 304
               }
             ],
-            "height": 796,
+            "height": 1021,
             "type": "dock-v",
-            "width": 228
+            "width": 304
           },
           {
             "children": [
@@ -43,9 +43,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 443.984375,
+                "height": 570,
                 "type": "panel",
-                "width": 902
+                "width": 1204
               },
               {
                 "active": 1,
@@ -54,14 +54,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 349,
+                "height": 448,
                 "type": "panel",
-                "width": 902
+                "width": 1204
               }
             ],
-            "height": 796,
+            "height": 1021,
             "type": "dock-v",
-            "width": 902
+            "width": 1204
           },
           {
             "active": 0,
@@ -69,9 +69,9 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 796,
+            "height": 1021,
             "type": "panel",
-            "width": 304
+            "width": 406
           }
         ],
         "type": "dock-h"
@@ -106,10 +106,18 @@
       "y": 267,
       "width": 500,
       "height": 522
+    },
+    "builder": {
+      "x": 698,
+      "y": 33,
+      "width": 654,
+      "height": 722
     }
   },
   "panelLabelWidth": {
-    "inspector": null
+    "inspector": null,
+    "builder": null
   },
-  "panelLabelWidth.inspector": null
+  "panelLabelWidth.inspector": null,
+  "panelLabelWidth.builder": null
 }

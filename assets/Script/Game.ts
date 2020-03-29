@@ -233,6 +233,7 @@ export default class Game extends cc.Component {
         let self = this;
         if(!self.over) {
             // 关闭物理系统
+            this.ball.getComponent(cc.RigidBody).linearVelocity = cc.v2(0,0);
             cc.director.getPhysicsManager().enabled = false;
             let worldPosition: cc.Vec2 = self.holeCon.convertToWorldSpace(cc.v2(targetNode.x,targetNode.y));
             let localPosition: cc.Vec2 = self.node.convertToNodeSpaceAR(worldPosition);

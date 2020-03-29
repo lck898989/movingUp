@@ -296,6 +296,7 @@ var Game = /** @class */ (function (_super) {
                 self = this;
                 if (!self.over) {
                     // 关闭物理系统
+                    this.ball.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, 0);
                     cc.director.getPhysicsManager().enabled = false;
                     worldPosition = self.holeCon.convertToWorldSpace(cc.v2(targetNode.x, targetNode.y));
                     localPosition_1 = self.node.convertToNodeSpaceAR(worldPosition);
